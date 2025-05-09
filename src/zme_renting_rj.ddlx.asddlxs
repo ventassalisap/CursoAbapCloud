@@ -3,7 +3,7 @@
     typeName: 'Coche',
     typeNamePlural: 'Coches',
     typeImageUrl: '',
-    imageUrl: 'Imagen',
+   // imageUrl: 'Imagen',
     title: {
         type: #STANDARD,
         label: '',
@@ -60,9 +60,9 @@ annotate entity Z_I_RENTING_RJ with
   @UI.lineItem: [{ position: 50, importance: #LOW }]
   Potencia;
 
-//  @UI.lineItem: [{ position: 60, importance: #HIGH }]
-//  @UI.selectionField: [{ position: 20  }]
-//  Precio;
+  @UI.lineItem: [{ position: 60, importance: #HIGH }]
+  @UI.selectionField: [{ position: 20  }]
+  Precio;
 
   @UI.lineItem: [{ position: 70, importance: #HIGH }]
   Moneda;
