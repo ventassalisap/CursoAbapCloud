@@ -1,87 +1,156 @@
 @Metadata.layer: #CORE
-@UI.headerInfo: {
-    typeName: 'Coche',
-    typeNamePlural: 'Coches',
-    typeImageUrl: '',
-   // imageUrl: 'Imagen',
-    title: {
-        type: #STANDARD,
-        label: '',
-        iconUrl: '',
-        criticality: '',
-        criticalityRepresentation: #WITHOUT_ICON,
-        value: 'Marca',
-        valueQualifier: '',
-        targetElement: '',
-        url: ''
-    },
-    description: {
-        type: #STANDARD,
-        label: '',
-        iconUrl: '',
-        criticality: '',
-        criticalityRepresentation: #WITHOUT_ICON,
-        value: 'Modelo',
-        valueQualifier: '',
-        targetElement: '',
-        url: ''
-    }
-}
-@Search.searchable: true
-annotate entity Z_I_RENTING_RJ with
+@UI: { headerInfo: { typeName:       'Matricula',
+                     typeNamePlural: 'Matriculas',
+                     title:          { type: #STANDARD,
+                                       label: 'Matricula',
+                                       value: 'Matricula' } } }
+annotate entity Z_C_RENTING_RJ with
 {
-  @UI.facet: [{ id: 'DetallesVehiculo' , label: 'Detalles del Vehiculo', type: #COLLECTION, position: 10 } ,
-              { id: 'Vehículo', parentId: 'DetallesVehiculo', label: 'Detalles',  type: #FIELDGROUP_REFERENCE, targetQualifier: 'DetallesVehiculo', position: 10 },
-              { id: 'Cliente', label: 'Clientes', type: #LINEITEM_REFERENCE, targetElement: '_DetCustomer', position: 20 }] 
-  @UI.fieldGroup: [{ qualifier: 'DetallesVehiculo', position: 10 }]
+  @EndUserText.label: 'IncUUID'
+  @UI.facet: [{ id:            'Incident',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                label:         'Incident',
+                position:      10 } ]
+  @UI.hidden: true
+  @UI: {lineItem: [{ position: 10,
+               importance: #HIGH,
+               label: 'IncUUID'}  ],
+  identification: [{ position: 10,
+                     label: 'IncUUID' }   ],
+  selectionField: [{ position: 10 }]}
+  IncUuid;
+
+  @UI: {lineItem: [{ position: 20,
+               importance: #MEDIUM }],
+  identification: [{ position: 20  } ],
+  selectionField: [{ position: 20 }]}
   Matricula;
-  @UI.lineItem: [{ position: 10, importance: #HIGH  }]
-  @UI.selectionField: [{ position: 10  }]
-  @Consumption.valueHelpDefinition: [{ entity: { name:'Z_B_BRANDS_RJ', element: 'Marca' } }]
+
+  @UI: {lineItem: [{ position: 30,
+               importance: #MEDIUM }],
+  identification: [{ position: 30  } ],
+  selectionField: [{ position: 30 }]}
   Marca;
 
-  @UI.lineItem: [{ position: 20, importance: #HIGH }]
-  @Search: { defaultSearchElement: true,
-  ranking: #MEDIUM,
-  fuzzinessThreshold:0.8
-    }
+  @UI: {lineItem: [{ position: 40,
+               importance: #MEDIUM }],
+  identification: [{ position: 40  } ],
+  selectionField: [{ position: 40 }]}
   Modelo;
 
-  @UI.lineItem: [{ position: 30, importance: #MEDIUM }]
-  @Search: { defaultSearchElement: true,
- ranking: #MEDIUM,
- fuzzinessThreshold:0.8
-   }
+  @UI: {lineItem: [{ position: 50,
+               importance: #MEDIUM }],
+  identification: [{ position: 50  } ],
+  selectionField: [{ position: 50 }]}
   Color;
 
-  @UI.lineItem: [{ position: 40, importance: #LOW }]
+  @UI: {lineItem: [{ position: 60,
+               importance: #MEDIUM }],
+  identification: [{ position: 60  } ],
+  selectionField: [{ position: 60 }]}
   Motor;
 
-  @UI.lineItem: [{ position: 50, importance: #LOW }]
+  @UI: {lineItem: [{ position: 70,
+               importance: #MEDIUM }],
+  identification: [{ position: 70  } ],
+  selectionField: [{ position: 70 }]}
   Potencia;
 
-  @UI.lineItem: [{ position: 60, importance: #HIGH }]
-  @UI.selectionField: [{ position: 20  }]
-  Precio;
+  @UI: {lineItem: [{ position: 80,
+               importance: #MEDIUM }],
+  identification: [{ position: 80  } ],
+  selectionField: [{ position: 80 }]}
+  UndPotencia;
 
-  @UI.lineItem: [{ position: 70, importance: #HIGH }]
-  Moneda;
-
-  @UI.lineItem: [{ position: 80, importance: #HIGH }]
-  Alquilado;
-
-  @UI.lineItem: [{ position: 90, importance: #HIGH, label: 'Estado', criticality: 'TiempoRenta' }]
-  Estado;
-  @UI.fieldGroup: [{ qualifier: 'DetallesVehiculo', position: 20 }]
+  @UI: {lineItem: [{ position: 90,
+               importance: #MEDIUM }],
+  identification: [{ position: 90  } ],
+  selectionField: [{ position: 90 }]}
   Combustible;
 
-  @UI.fieldGroup: [{ qualifier: 'DetallesVehiculo', position: 30 }]
+  @UI: {lineItem: [{ position: 100,
+               importance: #MEDIUM }],
+  identification: [{ position: 100  } ],
+  selectionField: [{ position: 100 }]}
   Consumo;
 
-  @UI.fieldGroup: [{ qualifier: 'DetallesVehiculo', position: 40 }]
-  FechaFabricacion;
+  @UI: {lineItem: [{ position: 110,
+               importance: #MEDIUM }],
+  identification: [{ position: 110  } ],
+  selectionField: [{ position: 110 }]}
+  FechaFabr;
 
-  @UI.fieldGroup: [{ qualifier: 'DetallesVehiculo', position: 50 }]
+  @UI: {lineItem: [{ position: 120,
+               importance: #MEDIUM }],
+  identification: [{ position: 120  } ],
+  selectionField: [{ position: 120 }]}
   Puertas;
-  //
+
+  @UI: {lineItem: [{ position: 130,
+               importance: #MEDIUM }],
+  identification: [{ position: 130  } ],
+  selectionField: [{ position: 130 }]}
+  Precio;
+
+  @UI: {lineItem: [{ position: 140,
+               importance: #MEDIUM }],
+  identification: [{ position: 140  } ],
+  selectionField: [{ position: 140 }]}
+  Moneda;
+
+  @UI: {lineItem: [{ position: 150,
+               importance: #MEDIUM }],
+  identification: [{ position: 150  } ],
+  selectionField: [{ position: 150 }]}
+  Alquilado;
+
+  @UI: {lineItem: [{ position: 150,
+               importance: #MEDIUM, criticality: 'TiempoRenta' }],
+  identification: [{ position: 150  } ],
+  selectionField: [{ position: 150 }]}
+  Estado;
+
+  @UI: {lineItem: [{ position: 160,
+               importance: #MEDIUM }],
+  identification: [{ position: 160  } ],
+  selectionField: [{ position: 160 }]}
+  AlqDesde;
+
+  @UI: {lineItem: [{ position: 170,
+               importance: #MEDIUM }],
+  identification: [{ position: 170  } ],
+  selectionField: [{ position: 170 }]}
+  AlqHasta;
+  @UI: {lineItem: [{ position: 180,
+               importance: #LOW }],
+  identification: [{ position: 180  } ],
+  selectionField: [{ position: 180 }]}
+  @UI.hidden: true
+  LocalCreatedBy;
+  @UI: {lineItem: [{ position: 190,
+               importance: #LOW }],
+  identification: [{ position: 190  } ],
+  selectionField: [{ position: 190 }]}
+  @UI.hidden: true
+  LocalCreatedAt;
+  @UI: {lineItem: [{ position: 200,
+               importance: #LOW }],
+  identification: [{ position: 200  } ],
+  selectionField: [{ position: 200 }]}
+  @UI.hidden: true
+  LocalLastChangedBy;
+  @UI: {lineItem: [{ position: 210,
+               importance: #LOW }],
+  identification: [{ position: 210  } ],
+  selectionField: [{ position: 210 }]}
+  @UI.hidden: true
+  LocalLastChangedAt;
+  @UI: {lineItem: [{ position: 220,
+               importance: #LOW }],
+  identification: [{ position: 220  } ],
+  selectionField: [{ position: 220 }]}
+  @UI.hidden: true
+  LastChangedAt;
+
 }

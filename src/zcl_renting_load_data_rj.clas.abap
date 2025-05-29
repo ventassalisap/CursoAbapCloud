@@ -1,6 +1,6 @@
 CLASS zcl_renting_load_data_rj DEFINITION
   PUBLIC
-  FINAL
+
   CREATE PUBLIC .
 
   PUBLIC SECTION.

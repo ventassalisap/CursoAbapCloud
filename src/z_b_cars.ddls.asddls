@@ -9,6 +9,7 @@
 }
 define view entity Z_B_CARS as select from zrent_cars_rj
 {
+    key inc_uuid as IncUuid,
     key matricula as Matricula,
     marca as Marca,
     modelo as Modelo,
@@ -20,9 +21,16 @@ define view entity Z_B_CARS as select from zrent_cars_rj
     consumo as Consumo,
     fecha_fabr as FechaFabr,
     puertas as Puertas,
- //   precio as Precio,
+   @Semantics.amount.currencyCode: 'Moneda'
+    precio as Precio,
     moneda as Moneda,
     alquilado as Alquilado,
     alq_desde as AlqDesde,
-    alq_hasta as AlqHasta
+    alq_hasta as AlqHasta,
+    local_created_by as LocalCreatedBy,
+    local_created_at as LocalCreatedAt,
+    local_last_changed_by as LocalLastChangedBy,
+    local_last_changed_at as LocalLastChangedAt,
+    last_changed_at as LastChangedAt
+    
 }
