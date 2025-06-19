@@ -9,6 +9,10 @@
 }
 define view entity Z_B_BRANDS_RJ as select from zrent_brands_rj
 {
-    key marca as Marca,
-    url as Url
+//    key marca as Marca,
+//    url as Url
+ key marca as Marca,
+ @UI.hidden: true
+ url as Imagen
+ 
 }

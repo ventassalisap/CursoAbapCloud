@@ -6,9 +6,13 @@
 "Z_I_RENTING_RJ"
 ],
 "ASSOCIATED":
-[],
+[
+"Z_B_DET_CUSTOMER_RJ"
+],
 "BASE":
-[],
+[
+"Z_I_RENTING_RJ"
+],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":

@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"Z_B_BRANDS_RJ",
 "Z_B_CARS",
 "Z_B_REM_DAYS_RJ"
 ],

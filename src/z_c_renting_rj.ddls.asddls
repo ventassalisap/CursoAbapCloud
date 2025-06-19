@@ -23,6 +23,7 @@ as projection on Z_I_RENTING_RJ
     Moneda,
     Alquilado,
     TiempoRenta,
+    Imagen,
     Estado,
     AlqDesde,
     AlqHasta,
@@ -30,5 +31,8 @@ as projection on Z_I_RENTING_RJ
     LocalCreatedAt,
     LocalLastChangedBy,
     LocalLastChangedAt,
-    LastChangedAt
+    LastChangedAt,
+    _DetCustomer
+//    DocId,
+//    TpoContrato
 }

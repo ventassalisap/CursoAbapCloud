@@ -1,14 +1,20 @@
 @Metadata.layer: #CORE
-annotate entity Z_B_DET_CUSTOMER_RJ
-    with 
+annotate entity z_b_det_customer_rj with
 {
-    @UI.lineItem: [{ position: 10, importance: #HIGH }]
-  nombre;
+
+
+  @UI.lineItem: [{ position: 10, importance: #HIGH , label: 'Cod Documento' }]
+  DocId;
   @UI.lineItem: [{ position: 20, importance: #HIGH }]
+  Matricula;
+  @UI.lineItem: [{ position: 30, importance: #HIGH }]
+  nombre;
+  @UI.lineItem: [{ position: 40, importance: #HIGH }]
   Apellidos;
-  @UI.lineItem: [{ position: 30, importance: #HIGH, label: 'Correo electrónico' }]
-  Correo;
-  @UI.lineItem: [{ position: 40, importance: #HIGH, label: 'Tipo de contrato' }]
+  @UI.lineItem: [{ position: 50, importance: #HIGH, label: 'Correo electrónico' }]
+  correo;
+  @UI.lineItem: [{ position: 60, importance: #HIGH, label: 'Tipo de contrato' }]
   TipoContrato;
+
 
 }

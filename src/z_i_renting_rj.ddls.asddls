@@ -37,6 +37,7 @@ define root view entity Z_I_RENTING_RJ
       when _RemDays.Dias > 100 then 3
       else 0
       end                     as TiempoRenta,
+      _Brands.Imagen          as Imagen,
       ''                      as Estado,
       Cars.AlqDesde           as AlqDesde,
       Cars.AlqHasta           as AlqHasta,
@@ -45,5 +46,8 @@ define root view entity Z_I_RENTING_RJ
       Cars.LocalLastChangedBy as LocalLastChangedBy,
       Cars.LocalLastChangedAt as LocalLastChangedAt,
       Cars.LastChangedAt      as LastChangedAt,
-      _DetCustomer
+      _DetCustomer    
+//      _DetCustomer.DocId as DocId,
+//      _DetCustomer.TipoContrato as TpoContrato
+      
 }
